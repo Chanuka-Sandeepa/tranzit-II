@@ -44,7 +44,6 @@ const MaintenanceManagement = () => {
       setShowHistoryModal(true);
     } catch (error) {
       console.error('Error fetching maintenance history:', error);
-      alert('Failed to load maintenance records. Please try again later.');
     }
   };
 
@@ -57,7 +56,6 @@ const MaintenanceManagement = () => {
       setShowRecordModal(true);
     } catch (error) {
       console.error('Error fetching maintenance record:', error);
-      alert('Failed to load maintenance record. Please try again later.');
     }
   };
 
@@ -93,7 +91,6 @@ const MaintenanceManagement = () => {
       alert('Maintenance recorded successfully!');
     } catch (error) {
       console.error('Error saving maintenance:', error);
-      alert('Failed to record maintenance. Please try again.');
     }
   };
 
