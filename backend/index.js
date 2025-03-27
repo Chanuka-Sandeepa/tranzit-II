@@ -7,6 +7,8 @@ import AuthRoutes from './route/Auth.js';
 import AdminRoutes from './route/Admin.js';
 import UserRoutes from './route/user.js';
 import VehicleRoutes from './route/VehicleRoute.js';
+import RouteRoutes from './route/routeRoutes.js';
+import MaintenanceRoutes from './route/maintenanceRoutes.js';
 
 dotenv.config();
 const app = express();
@@ -16,14 +18,17 @@ DbCon();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:5173', 
+    credentials: true,
+  }));
 
-
-// Routes
 app.use('/auth/api', AuthRoutes);
 app.use('/admin/api', AdminRoutes);
 app.use('/api/user', UserRoutes);
 app.use('/api/vehicle', VehicleRoutes);
+app.use('/api/route', RouteRoutes);
+app.use('/api/maintenance', MaintenanceRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
