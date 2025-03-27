@@ -13,7 +13,7 @@ const LoginPage = () => {
     e.preventDefault();
   
     try {
-      const response = await axios.post("http://localhost:3400/auth/api/login", { email, password });
+      const response = await axios.post("http://localhost:9000/auth/api/login", { email, password });
   
       if (response.status === 200) {
         const { token, user } = response.data;
