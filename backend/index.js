@@ -12,7 +12,7 @@ import MaintenanceRoutes from './route/maintenanceRoutes.js';
 
 dotenv.config();
 const app = express();
-const PORT = 9001;
+const PORT = 9000;
 
 DbCon();
 
