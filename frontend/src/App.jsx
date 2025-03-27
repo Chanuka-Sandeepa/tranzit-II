@@ -6,6 +6,7 @@ import AdminDashboard from "./page/Admin/AdminDashboard.jsx";
 import SignupPage from "./page/Auth/Singup.jsx";
 import LandingPage from "./page/LandingPage.jsx";
 import RouteUser from "./page/route/routeUser.jsx";
+import FleetManagement from "./page/Fleet/FleetManage.jsx";
 import ProfileUser from "./page/profile/profileUser.jsx";
 
 const App = () => {
@@ -35,7 +36,8 @@ const App = () => {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/dashboard" element={isAuthenticated && userRole === "user" ? <Dashboard /> : <Navigate to="/login" />} />
         <Route path="/profileUser" element={<ProfileUser />} />
-        <Route path="/routeUser" element={<RouteUser/>} />
+        <Route path="/routeUser" element={<RouteUser />} />
+        <Route path="/vehicle" element={<FleetManagement/>} />
         <Route path="/admin" element={isAuthenticated && userRole === "admin" ? <AdminDashboard /> : <Navigate to="/login" />} />
         <Route path="*" element={<Navigate to={isAuthenticated ? (userRole === "admin" ? "/admin" : "/dashboard") : "/login"} />} />
       
