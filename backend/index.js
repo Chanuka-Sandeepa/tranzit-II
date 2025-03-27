@@ -4,11 +4,13 @@ import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import DbCon from './config/DB.js';
 import AuthRoutes from './route/Auth.js';
+import AdminRoutes from './route/Admin.js';
 import UserRoutes from './route/user.js';
+import VehicleRoutes from './route/VehicleRoute.js';
 
 dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 3400;
+const PORT = 9001;
 
 DbCon();
 
@@ -18,8 +20,10 @@ app.use(cors());
 
 
 // Routes
-app.use('/auth/api',AuthRoutes);
+app.use('/auth/api', AuthRoutes);
+app.use('/admin/api', AdminRoutes);
 app.use('/api/user', UserRoutes);
+app.use('/api/vehicle', VehicleRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
