@@ -8,6 +8,8 @@ import AdminRoutes from './route/Admin.js';
 import UserRoutes from './route/user.js';
 import VehicleRoutes from './route/VehicleRoute.js';
 import RouteRoutes from './route/routeRoutes.js';
+import MaintenanceRoutes from './route/maintenanceRoutes.js';
+
 dotenv.config();
 const app = express();
 const PORT = 9001;
@@ -25,6 +27,7 @@ app.use('/admin/api', AdminRoutes);
 app.use('/api/user', UserRoutes);
 app.use('/api/vehicle', VehicleRoutes);
 app.use('/api/route', RouteRoutes);
+app.use('/api/maintenance', MaintenanceRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
