@@ -5,6 +5,7 @@ import Dashboard from "./page/DashBoard.jsx";
 import AdminDashboard from "./page/Admin/AdminDashboard.jsx";
 import SignupPage from "./page/Auth/Singup.jsx";
 import LandingPage from "./page/LandingPage.jsx";
+import RouteUser from "./page/route/routeUser.jsx";
 
 const App = () => {
   const [userRole, setUserRole] = useState(localStorage.getItem("role"));
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/login" element={isAuthenticated ? <Navigate to={userRole === "admin" ? "/admin" : "/dashboard"} /> : <LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/dashboard" element={isAuthenticated && userRole === "user" ? <Dashboard /> : <Navigate to="/login" />} />
+        <Route path="/routeUser" element={<RouteUser/>} />
         <Route path="/admin" element={isAuthenticated && userRole === "admin" ? <AdminDashboard /> : <Navigate to="/login" />} />
         <Route path="*" element={<Navigate to={isAuthenticated ? (userRole === "admin" ? "/admin" : "/dashboard") : "/login"} />} />
       </Routes>
