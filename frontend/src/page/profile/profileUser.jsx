@@ -23,13 +23,13 @@ const ProfileUser = () => {
     const fetchProfile = async () => {
       try {
         const token = localStorage.getItem('token');
+        const userId = localStorage.getItem('userId')
         if (!token) {
           navigate('/login');
           return;
         }
-
         // Assuming the user ID is in the token (you may adjust this depending on your backend)
-        const response = await axios.get('http://localhost:9000/api/user', {
+        const response = await axios.get(`http://localhost:9000/api/user/user/${userId}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
