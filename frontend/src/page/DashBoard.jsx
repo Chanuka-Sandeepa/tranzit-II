@@ -1,11 +1,20 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"; // Import Search icon
 import { useNavigate } from "react-router-dom"; 
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 
 const TransitHub = () => {
   const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [searchFrom, setSearchFrom] = useState("");
+
+  const handleClick = () => {
+    navigate("/routeUser"); // Navigate to '/route'
+  };
+  const vehicle = () => {
+    navigate("/vehicle"); // Navigate to '/vehicle'
+  };
+  const profileuser = () => {
+    navigate("/profileUser"); // Navigate to '/profileUser'
+  };
 
 
   const heroImages = [
@@ -101,11 +110,11 @@ const TransitHub = () => {
             </div>
             <div className="hidden md:flex items-center space-x-6">
               <button className="text-gray-600 hover:text-blue-600 font-medium">Home</button>
-              <button className="text-gray-600 hover:text-blue-600 font-medium" >Routes</button>
-              <button className="text-gray-600 hover:text-blue-600 font-medium" >Vehicle</button>
+              <button className="text-gray-600 hover:text-blue-600 font-medium" onClick={handleClick}>Routes</button>
+              <button className="text-gray-600 hover:text-blue-600 font-medium" onClick={vehicle}>Vehicle</button>
               <button className="text-gray-600 hover:text-blue-600 font-medium">Tickets</button>
               <button className="text-gray-600 hover:text-blue-600">🔔</button>
-              <button className="text-gray-600 hover:text-blue-600">👤</button>
+              <button className="text-gray-600 hover:text-blue-600" onClick={profileuser}>👤</button>
               {/* Logout Button */}
               <button 
                 onClick={handleLogout}
@@ -171,28 +180,6 @@ const TransitHub = () => {
               <p className="text-gray-600">
                 Intelligent route suggestions based on real-time conditions
               </p>
-            </div>
-          </div>
-
-          {/* Search Section */}
-          <div className="bg-gray-50 rounded-xl shadow-lg p-8 mb-12">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              Plan Your Journey
-            </h2>
-            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-              <div className="flex-1 relative">
-                <div className="absolute left-3 top-3 text-gray-400"></div>
-                <input
-                  type="text"
-                  placeholder="Search Bus Stop"
-                  className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
-                  value={searchFrom}
-                  onChange={(e) => setSearchFrom(e.target.value)}
-                />
-              </div>
-              <button className="md:w-auto w-full bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
-                Search Routes
-              </button>
             </div>
           </div>
 
