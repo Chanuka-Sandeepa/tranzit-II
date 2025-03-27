@@ -28,7 +28,7 @@ const RouteManagement = ({ routes, fetchRoutes }) => {
   const handleSubmitRoute = async (e) => {
     e.preventDefault();
     try {
-      const url = currentRoute ? `http://localhost:5000/api/route/${currentRoute._id}` : 'http://localhost:5000/api/route';
+      const url = currentRoute ? `http://localhost:9000/api/route/${currentRoute._id}` : 'http://localhost:9000/api/route';
       const method = currentRoute ? 'PUT' : 'POST';
       // Convert stops from comma-separated string to array
       const updatedRouteForm = {
@@ -81,7 +81,7 @@ const RouteManagement = ({ routes, fetchRoutes }) => {
   const handleDeleteRoute = async (id) => {
     if (window.confirm('Are you sure you want to delete this route?')) {
       try {
-        const response = await fetch(`http://localhost:5000/api/route/${id}`, {
+        const response = await fetch(`http://localhost:9000/api/route/${id}`, {
           method: 'DELETE',
         });
         if (!response.ok) {
