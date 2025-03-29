@@ -21,6 +21,7 @@ const LoginPage = () => {
         // Store token and role in localStorage
         localStorage.setItem("token", token);
         localStorage.setItem("role", user.role);
+        localStorage.setItem('UserId', user._id)
   
         // Force a page reload to trigger useEffect in App.js
         window.location.reload();
