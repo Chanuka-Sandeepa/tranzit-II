@@ -19,7 +19,7 @@ const VehicleManagement = () => {
 
   const fetchVehicles = async () => {
     try {
-      const response = await fetch('http://localhost:9000/api/vehicle');
+      const response = await fetch('http://localhost:8000/api/vehicle');
       if (!response.ok) throw new Error('Failed to fetch vehicles');
       const data = await response.json();
       setVehicles(data);
@@ -41,7 +41,7 @@ const VehicleManagement = () => {
       return;
     }
     try {
-      const url = currentVehicle ? `http://localhost:9000/api/vehicle/${currentVehicle._id}` : 'http://localhost:9000/api/vehicle';
+      const url = currentVehicle ? `http://localhost:8000/api/vehicle/${currentVehicle._id}` : 'http://localhost:8000/api/vehicle';
       const method = currentVehicle ? 'PUT' : 'POST';
       const response = await fetch(url, {
         method,
@@ -73,7 +73,7 @@ const VehicleManagement = () => {
   const handleDeleteVehicle = async (id) => {
     if (!window.confirm('Are you sure you want to delete this vehicle?')) return;
     try {
-      const response = await fetch(`http://localhost:9000/api/vehicle/${id}`, { method: 'DELETE' });
+      const response = await fetch(`http://localhost:8000/api/vehicle/${id}`, { method: 'DELETE' });
       if (!response.ok) throw new Error('Error deleting vehicle');
       fetchVehicles();
     } catch (error) {

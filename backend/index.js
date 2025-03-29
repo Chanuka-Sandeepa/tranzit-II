@@ -12,14 +12,14 @@ import MaintenanceRoutes from './route/maintenanceRoutes.js';
 
 dotenv.config();
 const app = express();
-const PORT = 9001;
+const PORT = 8000;
 
 DbCon();
 
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: 'http://localhost:5173', 
+    origin: 'http://localhost:5175', 
     credentials: true,
   }));
 

@@ -25,7 +25,7 @@ const SignupPage = () => {
     
     try {
       // Use the correct signup endpoint
-      const response = await axios.post('http://localhost:9000/auth/api/register', formData);
+      const response = await axios.post('http://localhost:8000/auth/api/register', formData);
       
       console.log('Signup Successful:', response.data);
       // Redirect to login page after successful signup

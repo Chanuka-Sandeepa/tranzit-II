@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { Search } from "lucide-react";
 
-const API_URL = "http://localhost:9000/api/route"; // Ensure backend is running
+const API_URL = "http://localhost:8000/api/route"; // Ensure backend is running
 
 export default function RouteManagement() {
   const [routes, setRoutes] = useState([]);

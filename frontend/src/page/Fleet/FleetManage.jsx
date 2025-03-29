@@ -4,8 +4,8 @@ import { Search, Wrench } from "lucide-react";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 
-const API_URL = "http://localhost:9000/api/vehicle"; // Vehicle API URL
-const MAINTENANCE_URL = "http://localhost:9000/api/maintenance"; // Maintenance API URL
+const API_URL = "http://localhost:8000/api/vehicle"; // Vehicle API URL
+const MAINTENANCE_URL = "http://localhost:8000/api/maintenance"; // Maintenance API URL
 
 export default function RouteManagement() {
   const [vehicles, setVehicles] = useState([]);

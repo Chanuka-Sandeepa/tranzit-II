@@ -29,7 +29,7 @@ const ProfileUser = () => {
           return;
         }
         // Assuming the user ID is in the token (you may adjust this depending on your backend)
-        const response = await axios.get(`http://localhost:9000/api/user/user/${userId}`, {
+        const response = await axios.get(`http://localhost:8000/api/user/user/${userId}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -58,7 +58,7 @@ const ProfileUser = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.put(
-        `http://localhost:9000/api/user/${profile._id}`,  // Corrected the API URL to include profile ID
+        `http://localhost:8000/api/user/${profile._id}`,  // Corrected the API URL to include profile ID
         {
           name: editForm.name,
           phone: editForm.phone
@@ -87,7 +87,7 @@ const ProfileUser = () => {
   const handleDelete = async () => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:9000/api/user/${profile._id}`, {
+      await axios.delete(`http://localhost:8000/api/user/${profile._id}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

@@ -7,7 +7,7 @@ const UserManagement = ({ users, fetchUsers }) => {
   const handleDeleteUser = async (id) => {
     if (window.confirm('Are you sure you want to delete this user?')) {
       try {
-        const response = await fetch(`http://localhost:9000/api/user/${id}`, {
+        const response = await fetch(`http://localhost:8000/api/user/${id}`, {
           method: 'DELETE',
         });
         

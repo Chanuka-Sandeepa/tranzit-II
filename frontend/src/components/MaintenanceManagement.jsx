@@ -24,7 +24,7 @@ const MaintenanceManagement = () => {
 
   const fetchVehicles = async () => {
     try {
-      const response = await fetch('http://localhost:9000/api/vehicle');
+      const response = await fetch('http://localhost:8000/api/vehicle');
       if (!response.ok) throw new Error('Failed to fetch vehicles');
       const data = await response.json();
       setVehicles(data);
@@ -36,7 +36,7 @@ const MaintenanceManagement = () => {
 
   const fetchMaintenanceHistory = async (vehicleId) => {
     try {
-      const response = await fetch(`http://localhost:9000/api/maintenance/${vehicleId}`);
+      const response = await fetch(`http://localhost:8000/api/maintenance/${vehicleId}`);
       if (!response.ok) throw new Error('Failed to fetch maintenance records');
       const data = await response.json();
       setMaintenanceHistory(data);
@@ -49,7 +49,7 @@ const MaintenanceManagement = () => {
 
   const fetchSpecificMaintenanceRecord = async (maintenanceId) => {
     try {
-      const response = await fetch(`http://localhost:9000/api/maintenance/maintenance/${maintenanceId}`);
+      const response = await fetch(`http://localhost:8000/api/maintenance/maintenance/${maintenanceId}`);
       if (!response.ok) throw new Error('Failed to fetch maintenance record');
       const data = await response.json();
       setMaintenanceRecord(data);
@@ -74,7 +74,7 @@ const MaintenanceManagement = () => {
       return;
     }
     try {
-      const response = await fetch('http://localhost:9000/api/maintenance', {
+      const response = await fetch('http://localhost:8000/api/maintenance', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(maintenanceForm),

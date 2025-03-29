@@ -20,7 +20,7 @@ const AdminDashboard = () => {
 
   const fetchRoutes = async () => {
     try {
-      const response = await fetch("http://localhost:9000/api/route");
+      const response = await fetch("http://localhost:8000/api/route");
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       const data = await response.json();
       setRoutes(data);
@@ -31,7 +31,7 @@ const AdminDashboard = () => {
 
   const fetchVehicles = async () => {
     try {
-      const response = await fetch("http://localhost:9000/api/vehicles");
+      const response = await fetch("http://localhost:8000/api/vehicles");
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       const data = await response.json();
       setVehicles(data);
@@ -42,7 +42,7 @@ const AdminDashboard = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch("http://localhost:9000/api/user");
+      const response = await fetch("http://localhost:8000/api/user");
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       const data = await response.json();
       setUsers(data);
