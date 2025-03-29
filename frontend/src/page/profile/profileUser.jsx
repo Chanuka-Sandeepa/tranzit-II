@@ -23,7 +23,7 @@ const ProfileUser = () => {
     const fetchProfile = async () => {
       try {
         const token = localStorage.getItem('token');
-        const userId = localStorage.getItem('userId')
+        const userId = localStorage.getItem('UserId')
         if (!token) {
           navigate('/login');
           return;
